@@ -55,4 +55,4 @@ module "eks" {
         Name = "${var.project}-${var.environment}"
     }
   )
-   
+}   
