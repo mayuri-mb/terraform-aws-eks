@@ -125,3 +125,12 @@ resource "aws_security_group_rule" "eks_node_vpc_cidr" {
     cidr_blocks= ["10.0.0.0/16"]
     security_group_id = local.eks_node_sg_id
 }
+
+resource "aws_security_group_rule" "mysql-eks-nodes" {
+    type = "ingress"
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    source_security_group_id = local.eks_node_sg_id
+    security_group_id = local.mysql_sg_id 
+}
