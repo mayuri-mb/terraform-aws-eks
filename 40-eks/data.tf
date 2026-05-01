@@ -3,7 +3,7 @@ data "aws_ssm_parameter" "vpc_id" {
 }
 
 data "aws_ssm_parameter" "private_subnet_ids" {
-    name = "/${var.project}/${var.environment}/private_subnet_ids"
+    name = "/${var.project}/${var.environment}/private_subnet_id"
 }
 
 data "aws_ssm_parameter" "eks_node_sg_id" {
